@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -22,8 +26,17 @@
                         <a href="#">Work</a>
                         <a href="#">Services</a>
                         <a href="#">Help</a>
-                        <a href="login.php" class="bt logsign">Log In</a>
-                        <a href="signup.php" class="logsign">Sign Up</a>
+
+                        <?php
+                         if(isset($_SESSION['email'])) {
+                             echo "klsjdfvkjldf";
+                         } else {
+                             echo '<a href="login.php" class="bt logsign">Log In</a>
+                             <a href="signup.php" class="logsign">Sign Up</a>';
+                         }
+                        ?>
+
+                       
                     </nav>
                     
                     <div class="icon">

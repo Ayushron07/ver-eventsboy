@@ -29,7 +29,7 @@ if (isset($_POST['uname'])) {
         if(mysqli_num_rows($query) > 0) {
             $error = "Email Already Registered !";
         } else {
-            $sql = "insert into users (`email`, `username`, `password`) value('$email', '$uname', '$pass');";
+            $sql = "insert into users (`email`, `username`, `pass`) value('$email', '$uname', '$pass');";
             $query = mysqli_query($conn, $sql);
             if($query) {
                 $register_status = "Succesfull";

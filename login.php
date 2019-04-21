@@ -1,6 +1,7 @@
 <?php
 include 'includes/dbh.inc.php';
-
+session_start();
+$row = null;
 $_MESSAGE = '';
 $error = '';
 $email = '';
@@ -16,16 +17,28 @@ $pass = '';
         }elseif (strlen($pass) <= 0) {
             $error = "Enter Password !";
         }else {
-            $result1 = "SELECT email , pass FROM Users WHERE email = '".$email."' AND pass = '".$pass."' ";
-            $query = mysqli_query($conn , $result1);
-
-            if (mysqli_num_rows($query) > 0) {
-                $_MESSAGE = "Successfull";
+            $data = "SELECT * FROM Users WHERE email = '$email';";
+            $result = mysqli_query($conn , $data);
+            if (mysqli_num_rows($result)) {
+            $row = mysqli_fetch_assoc($result);
+                if ($row['pass'] == $pass) {
+                    $_SESSION['login'] = true;
+                    $_MESSAGE = "Success";
+                }
+                else {
+                $error = "wrong Password";
+                }
             }else {
-                $error = "Invalid Email password";
+                $error = "user does not exist";
             }
-        }
     }
+}
+    if (isset($_SESSION['login'])) {
+        $_SESSION['name'] = $row['username'];
+        $_SESSION['email'] = $row['email'];
+        header('Location: index.php');
+    }
+    
 ?>
 
 <!DOCTYPE html>
