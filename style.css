@@ -1,0 +1,436 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(17, 21, 26);
+    font-family: "Trebuchet MS";
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}
+header {
+    color: rgb(199, 199, 199);
+    padding: 0.5rem 3rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(40,40,40,0.6);
+    z-index: 100;
+}
+header h2 {
+    display: inline-block;
+}
+nav {
+    float: right;
+}
+nav a {
+    display: inline-block;
+    padding: 8px 16px;
+    line-height: 3.3rem;
+}
+
+@media (min-width: 700px) {
+    nav .logsign {
+        line-height: 1.5rem;
+        background-color: #19AAAA;
+        border-radius: 30px;
+        color: rgb(11, 97, 97); 
+    }
+}
+/*header ul {
+    display: inline;
+}
+header ul:last-of-type {
+    float: right;
+}
+header ul:last-of-type button {
+    padding: 0.5rem;
+    background: transparent;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    color: inherit;
+    overflow: hidden;
+}
+header ul:last-of-type button:last-of-type {
+    border: 2px solid #19AAAA;
+    margin-top: 5px;
+    margin-left: 5px;
+    border-radius: 50px;
+}
+header ul:last-of-type button:hover {
+    transition: 0.6s;
+    border-radius: 50px;
+    background: #19AAAA;
+    color: #fff;
+}
+
+header ul li {
+    list-style-type: none;
+    display: inline-block;
+}
+header ul li a {
+    padding: 12px 16px;
+    display: block;
+}
+header ul li a:hover {
+    color: #fff;
+}
+*/
+header .hamberger {
+    float: right;
+    display: none;
+    position: relative;
+    z-index: 10;
+}
+header .hamberger span {
+    display: block;
+    width: 1.4rem;
+    height: 3px;
+    margin: 5px;
+    background-color: #fff;
+}
+
+.icon {
+    position: fixed;
+    bottom: 50px;
+    left: 20px;
+    cursor: pointer;
+}
+.icon .fa{
+    margin: 8px;
+    color: #19AAAA;
+}
+.arrow {
+    float: right;
+    bottom: 50px;
+    right: 30px;
+    position: fixed;
+}
+.arrow .fa {
+    font-size: 3rem;
+    padding: 5px;
+    float: right;
+}
+.fa:hover {
+    transition: 0.5s;
+    transform: scale(1.4);
+}
+
+/* Responsive for Mobile phone */
+
+@media (max-width: 700px) { 
+    nav {
+        display: block;
+        position: absolute;
+        width: 240px;
+        height: 100vh;
+        background-color: rgb(9, 60, 80);
+        top: 0;
+        right: -300px;
+        padding-top: 100px;
+        transition: 0.5s all;
+    }
+    nav a {
+        display: block;
+        padding-left: 50px;
+        transition: 0.2s;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    nav a:hover {
+        background: #fff;
+        color: rgb(11, 97, 97);
+    }
+    nav a.bt {
+        background: #fff;
+        color: rgb(11, 97, 97);
+    }
+    header .hamberger:hover ~ nav , nav:hover {
+        right: 0;
+    }
+    
+    header .hamberger span {
+        transition: 0.4s all;
+    }
+    header .hamberger {
+        display: block;
+        margin-top: 1.3rem;
+    }
+    header .hamberger:hover span:nth-child(2){
+        transform: translate(100px, 0);
+    }
+    header .hamberger:hover span:first-child {
+        transform: rotate(-45deg) translate(0,11px);
+    }
+    header .hamberger:hover span:last-of-type {
+        transform: rotate(45deg) translate(0,-11px);
+    }
+}
+
+
+/* Slider Design */
+
+.slider {
+    margin-top: 80px;
+	position: relative;
+	overflow: hidden;
+}
+.slider div {
+	display: block;
+	max-height: 100vh;
+	overflow: hidden;
+	background: #000000;
+	position: absolute;
+	left: -100%;
+	width: 100%;
+	opacity: 0;
+	transition: 1s left ease, 1s opacity ease;
+}
+.slider div.close {
+	opacity: 0;
+	left: 100%;
+}
+.slider div.show {
+	z-index: 10;
+	opacity: 1;
+	left: 0;
+}
+.slider > img {
+	display: block;
+	width: 100%;
+	max-height: 90vh;
+}
+.slider div > img {
+	display: block;
+	width: 100%;
+}
+.slider span {
+	z-index: 11;
+	display: block;
+	position: absolute;
+	bottom: 5%;
+	left: 50%;
+	transform: translate(-50%, 0);
+}
+.slider span i {
+	float: left;
+	content: " ";
+	display: block;
+	width: 1.5rem;
+	height: 0.25rem;
+	border-radius: 0.25rem;
+	box-shadow: 0 0.125rem 0.125rem rgba(40, 40, 40, 0.4);
+	background: rgba(255, 255, 255, 0.322);
+	margin: 0.125rem;
+	transition: 0.7s all;
+}
+.slider span i.active {
+	background: rgba(255, 255, 255, 0.726);
+}
+.slider button {
+	z-index: 11;
+	position: absolute;
+	top: calc(50% - 1.4rem);
+	height: 1.4rem;
+	width: 1.4rem;
+	padding: 1.5rem;
+	border: none;
+	border-radius: 50%;
+	background: rgba(17, 17, 17, 0.333);
+	transition: 0.4s all;
+	opacity: 0.6;
+}
+.slider button svg {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 1rem;
+	height: 1rem;
+	fill: rgba(255, 255, 255, 0.8);
+	transition: 0.3s all;
+}
+.slider button.prev {
+	left: 3%;
+	transform: rotate(180deg);
+}
+.slider button.next {
+	right: 3%;
+}
+.slider button:hover {
+	background: rgba(0, 0, 0, 0.8);
+	cursor: pointer;
+}
+
+/* Responsive Slider Styles */
+@media (max-width: 600px) {
+	.slider button {
+		padding: 1rem;
+	}
+}
+
+
+
+/* Login Session */
+#error {
+    color: red;
+    display: inline-block;
+    margin-left: 40px;
+    text-align: center;
+}
+#success {
+    color: rgb(26, 182, 46);
+}
+.container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    min-width: 700px;
+    background: rgb(255, 255, 255);
+    transform: translate(-50%,-50%);
+    margin-top: 30px;
+}
+.container .wcimg {
+    float: left;
+    display: block;
+}
+.container form {
+    width: calc(50% - 26px);
+    padding: 13px;
+    margin-top: 50px;
+    float: right;
+}
+.container form input {
+    padding: 10px 20px;
+    border: none;
+    width: calc(100% - 40px);
+    position: relative;
+    z-index: 1;
+    margin-bottom: 8px;
+    color: #000;
+    background: transparent;
+    border-bottom: 1px solid rgba(54, 53, 53, 0.753);
+}
+.container form button {
+    margin-top: 20px;
+    background: #000000;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 30px;
+    padding: 8px 30px;
+}
+.container form button:hover {
+    background: #258a0c;
+}
+.container form a {
+    margin-left: 60px;
+}
+.container form a:hover {
+    color: rgb(255, 255, 255);
+    text-decoration: underline;
+}
+@media (max-width: 700px) {
+    .container {
+        min-width: 200px;
+        max-width: 600px;
+        overflow: hidden;
+    }
+    .container .wcimg {
+        margin-top: -50px;
+    }
+    .container form {
+        float: none;
+        padding: 30px;
+        width: calc(100% - 60px);
+        padding-bottom: 40px;
+        overflow: hidden;
+    }
+    .container input::placeholder {
+        opacity: 0.8;
+        font-size: 1rem;
+    }
+    .container form button {
+        display: block;
+    }
+    .container form a {
+        margin-left: 0;
+        display: block;
+        margin-top: 19px;
+    }
+
+}
+
+/* Signup */
+.container2 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 700px;
+    height: 60vh;
+    padding-top: 2px;
+    padding-left: 5px;
+    box-shadow: 0px 0px 5px #000;
+}
+.container2 h2 {
+    color: #776d6d;
+    margin-top: 50px;
+}
+.container2 form {
+    overflow: hidden;
+    text-align: center;
+    width: 40%;
+    height: 100%;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.container2 form input {
+    width: calc(100% - 48px);
+    padding: 14px 0px;
+    border: none;
+    color: #fff;
+    background: transparent;
+    border-bottom: 1px solid #ccc;
+}
+.container2 button {
+    margin-top: 30px;
+    background: rgb(214, 66, 40);
+    color: #fff;
+    padding: 8px 18px;
+    z-index: 4;
+    border: none;
+}
+.wcimg1 {
+    float: right
+}
+.wcimg1 img {
+    height: 60vh;
+}
+.homebt {
+    border: 1px solid #fff;
+    padding: 8px 12px;
+    display: inline-block;
+    margin-top: 30px;
+    background-color: #13922f;
+    border-radius: 5px;s
+}
+@media (max-width:700px){
+    .container2 {
+        width: 400px;
+        height: 600px;
+    }
+    .container2 h2 {
+        margin-top: 30px;
+    }
+    .container2 .wcimg1 img {
+        width: 400px;
+        padding: 2px 2px;
+        height: 250px;
+    }
+    .container2 form {
+        padding-top: -200px;
+        width: calc(100% -  2px);
+    }
+}
