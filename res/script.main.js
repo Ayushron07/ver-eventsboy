@@ -96,3 +96,19 @@ if(slider) {
     forwardSliderImage(i);
     startSlideShow();
 }
+
+
+let barStatus = false;
+
+const loginbt = document.querySelector('#loginbt');
+
+loginbt.addEventListener('click', pick);
+function pick() {
+    if(barStatus) {
+        document.getElementById('btnbg').style.top = "-200px";
+        barStatus = false;
+    } else {
+        document.getElementById('btnbg').style.top = "80px";
+        barStatus = true;
+    }
+}

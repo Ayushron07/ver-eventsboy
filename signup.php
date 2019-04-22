@@ -32,7 +32,7 @@ if (isset($_POST['uname'])) {
             $sql = "insert into users (`email`, `username`, `pass`) value('$email', '$uname', '$pass');";
             $query = mysqli_query($conn, $sql);
             if($query) {
-                $register_status = "Succesfull";
+                $register_status = "Succesfull Please Login!!";
             } else {
                 $error = "Can't Register Right Now !!";
             }

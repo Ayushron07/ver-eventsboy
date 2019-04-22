@@ -27,9 +27,14 @@ session_start();
                         <a href="#">Services</a>
                         <a href="#">Help</a>
 
+                    
                         <?php
+
                          if(isset($_SESSION['email'])) {
-                             echo "klsjdfvkjldf";
+                             echo '<div id="loginbt">
+                                <div id="round">'.$_SESSION['name'][0].'</div>
+                                <div id="btnbg"><a href="logout.php">Logout</div>
+                                </div>';
                          } else {
                              echo '<a href="login.php" class="bt logsign">Log In</a>
                              <a href="signup.php" class="logsign">Sign Up</a>';
