@@ -50,6 +50,10 @@ $pass = '';
         <link href="style.css" rel="stylesheet">
     </head>
     <body>
+
+        <div id="back-bt">
+            <a href="../"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 13v10h-6v-6h-6v6h-6v-10h-3l12-12 12 12h-3zm-1-5.907v-5.093h-3v2.093l3 3z"/></svg> Home</a>
+        </div>
                     
         <div class="container">
             <div>
@@ -72,10 +76,10 @@ $pass = '';
                 ?>
             </div>
 
-                <input placeholder="Email" type="text" name="email" value="">
-                <input placeholder="Password" type="password" name="pass" value="">
-                <button name="login">Log In</button>
-                <a href="#">Forgot Password?</a>
+            <input placeholder="Email" type="text" name="email" value="">
+            <input placeholder="Password" type="password" name="pass" value="">
+            <button name="login">Log In</button>
+            <a href="#">Forgot Password?</a>
             </form>
             </div>
         </div>

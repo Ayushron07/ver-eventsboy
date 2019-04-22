@@ -4,26 +4,58 @@
         <title></title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="css/style.css" rel="stylesheet">
+        <link href="../style.css" rel="stylesheet">
     </head>
     <body>
         <div class="eventform">
             <div class="gameimg">
-                <img src="#" alt="Picture">
+                <img src="../img/Banner.jpg" alt="Picture">
             </div>
 
             <div class="text">
                 Registration Form
             </div>
-            <form>
-                <input type="text" name="" placeholder="First Name" required*>
-                <input type="text" name="" placeholder="Last Name">
+            <form id="pubg_signup_form">
+            <div class="gameop">
+                <select id="case">
+                    <option>Choose Play Type</option>
+                    <option>Solo</option>
+                    <option>duo</option>
+                    <option>Squad</option>
+                </select>
+            </div>
+            <div id="solo">
+                <input type="text" name="" placeholder="Pubg Gaming Id">
+                <input type="text" name="" placeholder="Pubg Gaming Name">
                 <input type="text" name="" placeholder="Registered Email">
-                <input type="text" name="" placeholder="Gaming Id">
                 <input type="text" name="" placeholder="Paytm Mobile No.">
-                <input type="text" name="" placeholder="">
-
+                <input type="checkbox" name="" value=""><a href="#">I agree with Terms and Policies</a>
+            </div>
+            <div id="duo">
+                <input type="text" name="" placeholder="Team Name">
+                <input type="text" name="" placeholder="Pubg Gaming Id">
+                <input type="text" name="" placeholder="Player1 Gaming Name">
+                <input type="text" name="" placeholder="Registered Email">
+                <input type="text" name="" placeholder="Player2 Gaming Name">
+                <input type="text" name="" placeholder="Paytm Mobile No.">
+                <input type="checkbox" name="" value=""><a href="#">I agree with Terms and Policies</a>
+            </div>
+            <div id="squad">
+                <input type="text" name="" placeholder="Team Name">       
+                <input type="text" name="" placeholder="Pubg Gaming Id">
+                <input type="text" name="" placeholder="Player1 Gaming Name">
+                <input type="text" name="" placeholder="Player2 Gaming Name">
+                <input type="text" name="" placeholder="Player3 Gaming Name">
+                <input type="text" name="" placeholder="Player4 Gaming Name">
+                <input type="text" name="" placeholder="Registered Email">
+                <input type="text" name="" placeholder="Paytm Mobile No.">
+                <input type="checkbox" name="" value=""><a href="#">I agree with Terms and Policies</a>
+            </div>
             </form>
         </div>
+
+
+        
+        <script src="../res/script.submition.js"></script>
     </body>
 </html>
